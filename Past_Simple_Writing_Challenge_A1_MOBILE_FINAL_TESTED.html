@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#245f35">
+<title>Past Simple Writing Challenge · Level II</title>
+<style>
+:root{--g:#245f35;--g2:#3d8b50;--bg:#eef5ef;--card:#fff;--ink:#1c3022;--muted:#647268;--line:#d7e4d8;--y:#fff3c8;--yl:#e4c663;--red:#a93636;--redsoft:#fdeaea;--blue:#eaf4fb;--shadow:0 10px 28px rgba(20,65,30,.11)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}button,input,textarea{font:inherit}.hide{display:none!important}
+#start{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(135deg,#184826,#3d8b50)}
+.startCard{width:min(680px,100%);background:#fff;border-radius:26px;padding:28px 22px;box-shadow:0 18px 50px #0004}.startCard h1{margin:0;color:var(--g);font-size:clamp(34px,8vw,46px);line-height:1.02}.startCard h2{margin:8px 0 18px;font-size:21px;color:#526557}.startCard p{font-size:17px;line-height:1.5;color:#4e6253}.startCard input{width:100%;padding:16px;border:2px solid var(--line);border-radius:14px;font-size:18px;margin:8px 0 16px;outline:none}.startCard input:focus{border-color:var(--g2);box-shadow:0 0 0 4px #3d8b5018}.primary,.secondary{width:100%;border:0;border-radius:14px;padding:15px;font-weight:900;cursor:pointer}.primary{background:var(--g);color:#fff}.secondary{margin-top:10px;background:#e8efe9;color:#31523a}.note{font-size:13px!important;color:#75837a!important}.resume{background:#eef7ef;border:1px solid #bcd6c1;border-radius:14px;padding:12px;margin:12px 0;color:#315b39!important;font-weight:700}
+#app{display:none;min-height:100vh}.top{position:sticky;top:0;z-index:20;background:var(--g);color:white;padding:12px 14px calc(12px + env(safe-area-inset-top));box-shadow:0 4px 16px #0002}.topIn{max-width:900px;margin:auto;display:flex;justify-content:space-between;gap:12px;align-items:center}.brand{font-weight:900}.progressText{font-size:14px;font-weight:800;white-space:nowrap}.track{height:9px;background:#dfe9df}.fill{height:100%;background:#efca5d;width:0;transition:.2s}
+main{max-width:900px;margin:16px auto;padding:0 11px 118px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px 15px;box-shadow:var(--shadow)}.step{font-size:13px;font-weight:900;color:var(--g2);letter-spacing:.08em}.title{font-size:clamp(26px,7vw,36px);font-weight:900;line-height:1.1;margin:8px 0}.prompt{font-size:19px;line-height:1.5;margin:0 0 10px}.reqBox{background:var(--y);border:1px solid var(--yl);border-radius:15px;padding:13px;margin:14px 0}.reqBox h3{margin:0 0 8px;font-size:16px}.req{display:flex;gap:8px;font-size:15px;margin:7px 0;line-height:1.35}.dot{width:18px;height:18px;border-radius:50%;border:2px solid #bea548;flex:0 0 auto;margin-top:1px}.req.done{font-weight:800;color:#2a6938}.req.done .dot{background:#55a767;border-color:#55a767;box-shadow:inset 0 0 0 4px #e9f5eb}.help{background:var(--blue);border:1px solid #bed7e6;border-radius:14px;padding:12px 13px;font-size:15px;line-height:1.45;margin-bottom:12px}.help b{display:block;margin-bottom:4px}textarea{width:100%;min-height:320px;padding:15px;border:2px solid #cad8cb;border-radius:15px;font-size:18px;line-height:1.55;resize:vertical;outline:none;background:#fff;color:#16271b}textarea:focus{border-color:var(--g2);box-shadow:0 0 0 4px #3d8b5018}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:9px}.metric{background:#f3f7f3;border-radius:11px;padding:8px;text-align:center;font-size:12px;color:var(--muted)}.metric b{display:block;font-size:17px;color:var(--g)}.saved{font-size:12px;color:#68786d;margin-top:8px}.warning{display:none;margin-top:10px;background:var(--redsoft);border:1px solid #e6baba;border-radius:12px;padding:10px 12px;color:#7d2b2b;font-size:14px;line-height:1.4}
+.nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 11px calc(10px + env(safe-area-inset-bottom));z-index:19;box-shadow:0 -5px 18px #0001}.navIn{max-width:900px;margin:auto;display:flex;gap:9px}.nav button{flex:1;border:0;border-radius:12px;padding:13px 9px;font-weight:900}.back{background:#e8efe9;color:#31523a}.next{background:var(--g);color:#fff}.nav button:disabled{opacity:.42}
+#result{display:none;min-height:100vh;padding:16px 10px 60px}.resultCard{max-width:900px;margin:auto;background:#fff;border-radius:22px;padding:22px 15px;box-shadow:var(--shadow)}.resultCard h1{margin:0;color:var(--g)}.score{font-size:64px;font-weight:900;color:var(--g);text-align:center;margin:18px 0 0}.scoreSub{text-align:center;font-size:19px;font-weight:900}.rubric{display:grid;gap:9px;margin-top:18px}.rubricRow{display:grid;grid-template-columns:1fr auto;gap:10px;background:#f3f8f4;border-radius:12px;padding:12px 13px}.feedback{margin-top:16px;background:#fff8dc;border:1px solid #ead270;border-radius:13px;padding:13px;line-height:1.45}.teacherBtn{margin-top:16px;width:100%;border:0;border-radius:12px;padding:12px;background:#333;color:white;font-weight:900}#teacherPanel{display:none;margin-top:12px;background:#f7f7f7;border-radius:13px;padding:12px}.teacherItem{background:#fff;border:1px solid #ddd;border-radius:11px;padding:10px;margin:8px 0;line-height:1.45}.answerReview{margin-top:8px;padding:9px;background:#f6f8f6;border-radius:9px;white-space:pre-wrap;font-size:14px}.flag{color:#8e2d2d;font-weight:900}.ok{color:#2f743f;font-weight:900}.export{width:100%;border:0;border-radius:11px;padding:11px;background:var(--g);color:#fff;font-weight:900}
+#lock{position:fixed;inset:0;z-index:999;display:none;align-items:center;justify-content:center;background:#141d16f8;color:#fff;padding:20px}.lockBox{width:min(520px,100%);text-align:center}.lockBox h2{font-size:30px;margin:0 0 8px}.lockBox p{line-height:1.5;color:#dce8df}.lockBox input{width:100%;padding:14px;border:0;border-radius:12px;margin:10px 0;font-size:18px}.lockBox button{width:100%;padding:14px;border:0;border-radius:12px;background:#efca5d;font-weight:900;color:#2a250d}.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#162b1b;color:#fff;padding:10px 14px;border-radius:999px;z-index:600;opacity:0;pointer-events:none;transition:.2s;font-size:13px;max-width:90%;text-align:center}.toast.show{opacity:1}
+@media(max-width:640px){main{margin-top:12px}.card{padding:18px 14px}.prompt{font-size:18px}.help,.req{font-size:15px}textarea{min-height:340px;font-size:18px}.metric b{font-size:17px}.startCard{padding:24px 18px}}
+@media(max-width:360px){.brand{font-size:14px}.progressText{font-size:12px}.title{font-size:25px}.metrics{gap:5px}.metric{padding:7px 4px}.nav button{padding:12px 6px}}
+</style>
+</head>
+<body>
+<section id="start">
+  <div class="startCard">
+    <h1>Past Simple Writing Challenge</h1>
+    <h2>Level II · A1 writing</h2>
+    <p>Write about real experiences from your past using simple English.</p>
+    <p><b>Your work saves automatically.</b> If you refresh, close the browser, or return to the same link on the same device and browser, you continue where you stopped.</p>
+    <div id="resumeInfo" class="resume hide"></div>
+    <label><b>Full name</b></label>
+    <input id="name" autocomplete="name" placeholder="Write your full name">
+    <button class="primary" onclick="startAssessment()">START / CONTINUE</button>
+    <button id="resetBtn" class="secondary hide" onclick="teacherReset()">TEACHER RESET</button>
+    <p class="note">Pasting is disabled. Security events are recorded. No timer is used. Progress is stored locally in this browser.</p>
+  </div>
+</section>
+
+<section id="app">
+  <div class="top"><div class="topIn"><div class="brand">Past Simple Writing</div><div class="progressText" id="progText">Task 1 / 8</div></div></div>
+  <div class="track"><div class="fill" id="fill"></div></div>
+  <main>
+    <div class="card">
+      <div class="step" id="step"></div>
+      <div class="title" id="title"></div>
+      <p class="prompt" id="prompt"></p>
+      <div class="reqBox"><h3>What you need to include</h3><div id="reqList"></div></div>
+      <div class="help"><b>Language support</b><span id="help"></span></div>
+      <textarea id="answer" spellcheck="true" autocomplete="off" autocapitalize="sentences" placeholder="Write your answer here. Use periods or one sentence per line."></textarea>
+      <div class="metrics"><div class="metric"><b id="sent">0</b>sentences</div><div class="metric"><b id="words">0</b>words</div><div class="metric"><b id="past">0</b>past verbs</div></div>
+      <div class="saved" id="saved">Saved automatically.</div>
+      <div class="warning" id="warning"></div>
+    </div>
+  </main>
+  <div class="nav"><div class="navIn"><button class="back" id="back" onclick="goBack()">BACK</button><button class="next" id="next" onclick="goNext()">NEXT</button></div></div>
+</section>
+
+<section id="result">
+  <div class="resultCard">
+    <h1>Writing Result</h1><div id="resultName" style="font-weight:800"></div>
+    <div class="score" id="grade">0.0</div><div class="scoreSub">out of 5.0</div>
+    <div class="rubric" id="rubric"></div><div class="feedback" id="feedback"></div>
+    <button class="teacherBtn" onclick="teacherReport()">Teacher report</button>
+    <div id="teacherPanel"><div id="teacherItems"></div><button class="export" onclick="exportReport()">Download teacher report</button></div>
+  </div>
+</section>
+
+<div id="lock"><div class="lockBox"><h2>Assessment locked</h2><p id="lockReason"></p><input id="pin" type="password" inputmode="numeric" placeholder="Teacher PIN"><button onclick="unlock()">UNLOCK</button></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY='PastSimpleWriting_A1_v2';
+const VERSION=2;
+const PIN_HASH='1bea20e1df19b12013976de2b5e0e3d1fb4ba088b59fe53642c324298b21ffd9';
+const PIN_FNV='45294572';
+const TASKS=[
+{title:'My 2026 intersemester break',prompt:'What did you do during your 2026 intersemester break? Where did you go? Who were you with?',minS:4,maxS:4,minP:2,minN:0,minC:0,minI:0,minT:0,conn:[],help:'Useful verbs: went, stayed, visited, watched, played, studied, traveled, ate, had.'},
+{title:'Carnaval de Negros y Blancos',prompt:'How did you celebrate the Carnival? Where did you go? Who did you go with? What did you see or do?',minS:5,maxS:5,minP:3,minN:0,minC:0,minI:0,minT:1,conn:[],help:'Useful words: last January, during the Carnival, went, watched, saw, ate, danced, celebrated, enjoyed.'},
+{title:'December / Christmas / New Year',prompt:'How did you celebrate December, Christmas or New Year? What did you do with your family or friends?',minS:6,maxS:6,minP:4,minN:1,minC:0,minI:0,minT:1,conn:[],help:"Remember: didn't + base verb. Example: I didn't stay at home. Time words: last December, on Christmas, on New Year's Eve."},
+{title:'Why did I choose my degree?',prompt:'Why did you choose your degree? When did you decide? Who helped you? What did you want to study before?',minS:6,maxS:7,minP:4,minN:1,minC:1,minI:1,minT:0,conn:['because','and','but'],help:'Connectors: because = porque, and = y, but = pero. Useful verbs: chose, wanted, decided, helped, liked, thought.'},
+{title:'My school years',prompt:"Where did you study when you were at school? What subjects did you like? What did you do with your friends? What didn't you like?",minS:7,maxS:8,minP:5,minN:1,minC:2,minI:1,minT:0,conn:['and','but','because','then','after that'],help:'Connectors: and, but, because, then, after that. Useful verbs: studied, liked, played, had, went, met, learned, was, were.'},
+{title:'A memorable day',prompt:'Tell us about a day from the past that you remember very well. What happened first? What happened next? Why was it important?',minS:8,maxS:8,minP:5,minN:1,minC:2,minI:2,minT:1,conn:['and','but','because','then','after that','finally','first'],help:'Use a clear order: first, then, after that, finally. You can use: went, saw, had, ate, took, made, felt.'},
+{title:'A past event in Pasto or Colombia',prompt:'Write about a past event in Pasto or Colombia. It can be a Carnival, a local event, an important national event, or something you remember.',minS:9,maxS:9,minP:6,minN:1,minC:2,minI:1,minT:1,conn:['first','then','after that','finally','because','but','and'],help:'Organize the story with: first, then, after that, finally. Add a past time expression such as last year, in 2016, two years ago.'},
+{title:'Final writing challenge',prompt:"Tell us about an important experience from your past. Explain what happened, what you did, what you didn't do, and why you remember it.",minS:9,maxS:10,minP:6,minN:2,minC:3,minI:2,minT:2,conn:['and','but','because','then','after that','finally','first'],help:"Use everything you practiced: Past Simple, irregular verbs, didn't + base verb, time expressions, and connectors."}
+];
+
+const IRR_MAP={
+went:'go',ate:'eat',had:'have',saw:'see',made:'make',took:'take',bought:'buy',did:'do',came:'come',got:'get',woke:'wake',felt:'feel',thought:'think',chose:'choose',met:'meet',left:'leave',found:'find',gave:'give',told:'tell',wrote:'write',read:'read',spoke:'speak',drank:'drink',ran:'run',slept:'sleep',sat:'sit',stood:'stand',knew:'know',became:'become',began:'begin',brought:'bring',was:'be',were:'be',"wasn't":'be',"weren't":'be',won:'win',lost:'lose',spent:'spend',sent:'send',kept:'keep',heard:'hear',said:'say',paid:'pay',drove:'drive',flew:'fly',swam:'swim',sang:'sing',cut:'cut',put:'put',caught:'catch',taught:'teach',learned:'learn',learnt:'learn'};
+const IRR=new Set(Object.keys(IRR_MAP));
+const SUBJECTS=new Set(['i','he','she','we','they','you','it','my','the','people','family','friends','students','teacher','teachers','parents','mother','father','brother','sister']);
+const ADV=['furthermore','moreover','nevertheless','nonetheless','consequently','therefore','whereas','notwithstanding','remarkable','extraordinary','constituted','manifestation','heritage','profound','perspective','ultimately','subsequently','multifaceted','significance'];
+
+function freshState(){return {version:VERSION,student:'',idx:0,answers:Array(TASKS.length).fill(''),carets:Array(TASKS.length).fill(0),finished:false,security:[],events:Array.from({length:TASKS.length},()=>({keys:0,large:0,start:null,last:null})),result:null,savedAt:null,baselines:{portrait:null,landscape:null},visibilityCount:0};}
+let state=freshState(),started=false,saveTimer=null,resizeTimer=null,splitConfirmTimer=null,securityWatch=null,securityLocked=false;
+
+function normalizeState(p){
+  const f=freshState();
+  if(!p||typeof p!=='object')return f;
+  const o={...f,...p};
+  if(!Array.isArray(o.answers)||o.answers.length!==TASKS.length)o.answers=f.answers;
+  if(!Array.isArray(o.carets)||o.carets.length!==TASKS.length)o.carets=f.carets;
+  if(!Array.isArray(o.security))o.security=[];
+  if(!Array.isArray(o.events)||o.events.length!==TASKS.length)o.events=f.events;
+  if(!o.baselines||typeof o.baselines!=='object')o.baselines={portrait:o.baselineWidth?{w:Number(o.baselineWidth),h:null}:null,landscape:null};
+  for(const key of ['portrait','landscape']){if(typeof o.baselines[key]==='number')o.baselines[key]={w:o.baselines[key],h:null};}
+  o.idx=Math.max(0,Math.min(TASKS.length-1,Number(o.idx)||0));
+  return o;
+}
+function load(){try{const r=localStorage.getItem(KEY);if(r)state=normalizeState(JSON.parse(r));}catch(e){state=freshState();}}
+function save(){try{state.savedAt=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify(state));const s=document.getElementById('saved');if(s)s.textContent='Saved automatically · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});}catch(e){const s=document.getElementById('saved');if(s){s.textContent='Saving problem. Keep this page open and tell the teacher.';s.style.color='#a93636';}}}
+function saveNow(){clearTimeout(saveTimer);storeCurrent(false);save();}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1700)}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+
+async function sha256(v){const data=new TextEncoder().encode(v);const h=await crypto.subtle.digest('SHA-256',data);return [...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join('');}
+function fnv1a(v){let h=0x811c9dc5;for(const ch of new TextEncoder().encode(v)){h^=ch;h=Math.imul(h,0x01000193)>>>0;}return h.toString(16).padStart(8,'0');}
+async function checkPin(v){try{if(crypto&&crypto.subtle)return await sha256(v)===PIN_HASH;}catch(e){}return fnv1a(v)===PIN_FNV;}
+
+function initStart(){
+  const ri=document.getElementById('resumeInfo'),rb=document.getElementById('resetBtn'),name=document.getElementById('name');
+  if(state.student){
+    name.value=state.student;
+    if(state.answers.some(a=>String(a).trim())||state.finished){
+      name.readOnly=true;rb.classList.remove('hide');ri.classList.remove('hide');
+      ri.textContent=state.finished?'Saved assessment found for '+state.student+'. Press START / CONTINUE to see the result.':'Saved work found for '+state.student+'. You will continue at Task '+(state.idx+1)+'.';
+    }
+  }
+}
+async function teacherReset(){const p=prompt('Teacher PIN');if(!(await checkPin(p||''))){alert('Incorrect PIN.');return;}if(!confirm('Reset all saved work on this device?'))return;localStorage.removeItem(KEY);state=freshState();location.reload();}
+function startAssessment(){
+  const n=document.getElementById('name').value.trim();if(!n){alert('Please write your full name.');return;}
+  if(state.student&&state.answers.some(a=>String(a).trim())&&n!==state.student){alert('Saved work belongs to '+state.student+'. Ask the teacher to reset this device.');return;}
+  const hasSavedWork=state.answers.some(a=>String(a).trim())||state.finished;
+  state.student=hasSavedWork?(state.student||n):n;
+  started=true;
+  const ori=getOrientation();if(!state.baselines)state.baselines={portrait:null,landscape:null};if(!state.baselines[ori]||!hasSavedWork)state.baselines[ori]={w:getViewportWidth(),h:getViewportHeight()};
+  save();
+  document.getElementById('start').style.display='none';
+  if(state.finished){showResult();return;}
+  document.getElementById('app').style.display='block';render();setTimeout(splitCheck,900);if(!securityWatch)securityWatch=setInterval(splitCheck,2200);
+}
+
+function wc(t){return (String(t).trim().match(/[A-Za-zÀ-ÿ']+/g)||[]).length;}
+function toks(t){return (String(t).toLowerCase().match(/[a-z']+/g)||[]);}
+function sents(t){return String(t).replace(/\r/g,'').split(/(?:[.!?]+|\n+)/).map(x=>x.trim()).filter(x=>wc(x)>=3);}
+function past(t){let c=0,i=0;toks(t).forEach(w=>{if(IRR.has(w)){c++;i++;}else if(w.length>3&&/ed$/.test(w)&&!['need','red'].includes(w))c++;});return {c,i};}
+function negativeInfo(t){
+  const l=String(t).toLowerCase();const rx=/\b(didn't|did not)\s+([a-z']+)/g;let m,did=0,invalid=0;
+  while((m=rx.exec(l))){const v=m[2];if(IRR.has(v)||(/ed$/.test(v)&&v!=='need'))invalid++;else did++;}
+  const beNeg=(l.match(/\b(wasn't|was not|weren't|were not)\b/g)||[]).length;
+  return {did,beNeg,invalid};
+}
+function conns(t,a){const l=' '+String(t).toLowerCase().replace(/[.,!?;:]/g,' ')+' ';return [...new Set(a)].filter(x=>l.includes(' '+x+' ')).length;}
+function times(t){
+  const l=String(t).toLowerCase();let n=0;
+  const pats=[/\byesterday\b/g,/\blast\s+(night|week|weekend|month|year|january|december|christmas)\b/g,/\b(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(day|days|week|weeks|month|months|year|years)\s+ago\b/g,/\bin\s+(19|20)\d{2}\b/g,/\bwhen\s+i\s+was\b/g,/\bduring\s+the\s+carnival\b/g,/\bon\s+(christmas|new year's eve|december\s+31|january\s+\d{1,2})\b/g,/\bin\s+(january|february|march|april|may|june|july|august|september|october|november|december)\b/g];
+  pats.forEach(r=>{const m=l.match(r);if(m)n+=m.length;});return n;
+}
+function duplicates(t){const a=sents(t).map(x=>x.toLowerCase().replace(/[^a-z' ]/g,'').replace(/\s+/g,' ').trim());const seen=new Set(),dups=[];a.forEach(x=>{if(seen.has(x))dups.push(x);else seen.add(x)});return dups.length;}
+function completeSentenceRatio(t){const arr=sents(t);if(!arr.length)return 0;let good=0;arr.forEach(s=>{const ts=toks(s),p=past(s),n=negativeInfo(s);const hasVerb=p.c>0||n.did>0||n.beNeg>0||ts.includes('was')||ts.includes('were');const reasonable=ts.length>=3&&ts.length<=24;if(hasVerb&&reasonable)good++;});return good/arr.length;}
+function analyze(t,k){const p=past(t),ng=negativeInfo(t);return {s:sents(t).length,w:wc(t),p:p.c,i:p.i,n:ng.did,beNeg:ng.beNeg,badNeg:ng.invalid,c:conns(t,k.conn||[]),tm:times(t),dup:duplicates(t),complete:completeSentenceRatio(t)};}
+function req(a,k){const r=[[`${k.minS}${k.maxS!==k.minS?'–'+k.maxS:''} sentences`,a.s>=k.minS&&a.s<=k.maxS],[`at least ${k.minP} past verbs`,a.p>=k.minP]];if(k.minN)r.push([`at least ${k.minN} negative sentence${k.minN>1?'s':''} with didn't`,a.n>=k.minN]);if(k.minC)r.push([`at least ${k.minC} different connector${k.minC>1?'s':''}`,a.c>=k.minC]);if(k.minI)r.push([`at least ${k.minI} irregular past verb${k.minI>1?'s':''}`,a.i>=k.minI]);if(k.minT)r.push([`at least ${k.minT} past time expression${k.minT>1?'s':''}`,a.tm>=k.minT]);return r;}
+
+function render(){
+  const k=TASKS[state.idx],b=document.getElementById('answer');
+  document.getElementById('step').textContent=`TASK ${state.idx+1} OF ${TASKS.length}`;document.getElementById('title').textContent=k.title;document.getElementById('prompt').textContent=k.prompt;document.getElementById('help').textContent=k.help;b.value=state.answers[state.idx]||'';
+  document.getElementById('progText').textContent=`Task ${state.idx+1} / ${TASKS.length}`;document.getElementById('fill').style.width=`${((state.idx+1)/TASKS.length)*100}%`;document.getElementById('back').disabled=state.idx===0;document.getElementById('next').textContent=state.idx===TASKS.length-1?'FINISH':'NEXT';document.getElementById('warning').style.display='none';live();
+  setTimeout(()=>{b.focus({preventScroll:true});const c=Math.min(Number(state.carets[state.idx])||0,b.value.length);try{b.setSelectionRange(c,c);}catch(e){}},120);
+}
+function live(){const k=TASKS[state.idx],a=analyze(document.getElementById('answer').value,k);document.getElementById('sent').textContent=a.s;document.getElementById('words').textContent=a.w;document.getElementById('past').textContent=a.p;document.getElementById('reqList').innerHTML=req(a,k).map(x=>`<div class="req ${x[1]?'done':''}"><span class="dot"></span><span>${x[0]}</span></div>`).join('');const w=document.getElementById('warning');const msgs=[];if(a.badNeg)msgs.push("Check the negative form: after didn't, use the base verb (didn't go, not didn't went).");if(a.dup)msgs.push('Avoid repeating exactly the same sentence.');if(msgs.length){w.textContent=msgs.join(' ');w.style.display='block';}else w.style.display='none';}
+function storeCurrent(doSave=true){const b=document.getElementById('answer');if(!b)return;state.answers[state.idx]=b.value;state.carets[state.idx]=b.selectionStart||0;if(doSave)save();}
+function goBack(){storeCurrent();if(state.idx>0){state.idx--;save();render();scrollTo(0,0);}}
+function missingRequirements(a,k){const m=[];if(a.s<k.minS)m.push(`at least ${k.minS} sentences`);if(a.s>k.maxS)m.push(`no more than ${k.maxS} sentences`);if(a.w<k.minS*4)m.push(`a little more detail (about ${k.minS*4} words or more)`);if(a.p<Math.max(1,k.minP-1))m.push('more Past Simple verbs');if(k.minN&&a.n<k.minN)m.push(`${k.minN} correct negative sentence${k.minN>1?'s':''}`);if(k.minC&&a.c<k.minC)m.push(`${k.minC} different connector${k.minC>1?'s':''}`);if(k.minI&&a.i<k.minI)m.push(`${k.minI} irregular past verb${k.minI>1?'s':''}`);if(k.minT&&a.tm<k.minT)m.push(`${k.minT} past time expression${k.minT>1?'s':''}`);if(a.badNeg)m.push("correct didn't + base verb");if(a.dup)m.push('different sentences (no exact duplicates)');return m;}
+function goNext(){storeCurrent();const k=TASKS[state.idx],a=analyze(state.answers[state.idx],k),m=missingRequirements(a,k);if(m.length){alert('Please review your answer before continuing:\n\n• '+m.join('\n• '));return;}if(state.idx<TASKS.length-1){state.idx++;save();render();scrollTo(0,0);setTimeout(splitCheck,800);}else if(confirm('Finish the assessment and calculate your grade?')){state.finished=true;save();showResult();}}
+
+function onAnswerInput(e){const idx=state.idx,ev=state.events[idx],now=Date.now(),old=state.answers[idx]||'',val=e.target.value,delta=Math.abs(val.length-old.length);if(!ev.start)ev.start=now;ev.last=now;ev.keys++;if(delta>=30)ev.large++;state.answers[idx]=val;state.carets[idx]=e.target.selectionStart||0;live();save();}
+document.getElementById('answer').addEventListener('input',onAnswerInput);
+document.getElementById('answer').addEventListener('keyup',e=>{state.carets[state.idx]=e.target.selectionStart||0;});
+
+function blockInsert(e){if(e.target&&e.target.id==='answer'&&(e.inputType==='insertFromPaste'||e.inputType==='insertFromDrop')){e.preventDefault();state.security.push({type:e.inputType==='insertFromPaste'?'paste_blocked':'drop_blocked',task:state.idx+1,time:new Date().toISOString()});save();toast(e.inputType==='insertFromPaste'?'Pasting is disabled.':'Drag & drop is disabled.');}}
+document.addEventListener('beforeinput',blockInsert);
+document.addEventListener('paste',e=>{if(e.target&&e.target.id==='answer'){e.preventDefault();state.security.push({type:'paste_blocked',task:state.idx+1,time:new Date().toISOString()});save();toast('Pasting is disabled.');}});
+document.addEventListener('drop',e=>{if(e.target&&e.target.id==='answer'){e.preventDefault();state.security.push({type:'drop_blocked',task:state.idx+1,time:new Date().toISOString()});save();toast('Drag & drop is disabled.');}});
+
+/* App/tab changes. Keyboard opening does not use visibilitychange. */
+document.addEventListener('visibilitychange',()=>{if(!started||state.finished)return;if(document.hidden){storeCurrent(false);state.visibilityCount=(state.visibilityCount||0)+1;state.security.push({type:'tab_or_app_change',task:state.idx+1,time:new Date().toISOString()});save();}else if((state.visibilityCount||0)>=2){lock('Repeated tab/app changes were detected.');}});
+
+function getViewportWidth(){return Math.round(window.innerWidth||document.documentElement.clientWidth||((window.visualViewport&&visualViewport.width)||0));}
+function getViewportHeight(){return Math.round(window.innerHeight||document.documentElement.clientHeight||((window.visualViewport&&visualViewport.height)||0));}
+function getOrientation(){try{const t=screen.orientation&&screen.orientation.type;if(t&&t.startsWith('landscape'))return 'landscape';if(t&&t.startsWith('portrait'))return 'portrait';}catch(e){}return (screen.width||innerWidth)>(screen.height||innerHeight)?'landscape':'portrait';}
+function splitCheck(){
+  if(!started||state.finished||securityLocked)return;
+  clearTimeout(resizeTimer);clearTimeout(splitConfirmTimer);
+  resizeTimer=setTimeout(()=>{
+    const ori=getOrientation(),w=getViewportWidth(),h=getViewportHeight();if(!state.baselines)state.baselines={portrait:null,landscape:null};
+    let base=state.baselines[ori];
+    if(!base){state.baselines[ori]={w,h};save();return;}
+    if(typeof base==='number')base=state.baselines[ori]={w:base,h};
+    if(!base.w)base.w=w;if(!base.h)base.h=h;
+    const widthRatio=w/base.w,heightRatio=h/base.h;
+    const active=document.activeElement,typing=active&&(['TEXTAREA','INPUT'].includes(active.tagName));
+    const widthSuspicious=widthRatio<0.64;
+    const heightSuspicious=!typing&&heightRatio<0.60;
+    /* Width detects side-by-side split. Height is checked only when the student is not typing, so the mobile keyboard is not treated as split-screen. */
+    if(widthSuspicious||heightSuspicious){
+      splitConfirmTimer=setTimeout(()=>{
+        const ori2=getOrientation(),base2=state.baselines[ori2],w2=getViewportWidth(),h2=getViewportHeight();if(!base2||ori2!==ori)return;
+        const b2=typeof base2==='number'?{w:base2,h:h2}:base2;
+        const active2=document.activeElement,typing2=active2&&(['TEXTAREA','INPUT'].includes(active2.tagName));
+        const wr=w2/(b2.w||w2),hr=h2/(b2.h||h2);
+        if(started&&!state.finished&&(wr<0.64||(!typing2&&hr<0.60))){
+          state.security.push({type:'possible_split_screen',task:state.idx+1,widthRatio:+wr.toFixed(2),heightRatio:+hr.toFixed(2),time:new Date().toISOString()});
+          save();lock('Possible split-screen mode was detected.');
+        }
+      },1000);
+    }
+  },750);
+}
+window.addEventListener('resize',splitCheck);if(window.visualViewport)visualViewport.addEventListener('resize',splitCheck);
+document.getElementById('answer').addEventListener('blur',()=>setTimeout(splitCheck,350));
+
+function lock(m){if(securityLocked)return;securityLocked=true;storeCurrent(false);save();document.getElementById('lockReason').textContent=m+' Close split-screen or return to the assessment, then ask the teacher to unlock it.';document.getElementById('lock').style.display='flex';}
+async function unlock(){if(await checkPin(document.getElementById('pin').value||'')){document.getElementById('lock').style.display='none';securityLocked=false;document.getElementById('pin').value='';state.security.push({type:'teacher_unlock',task:state.idx+1,time:new Date().toISOString()});save();}else alert('Incorrect PIN.');}
+
+function taskScore(text,k){
+  const a=analyze(text,k),ss=Math.min(a.s/k.minS,1),ps=Math.min(a.p/k.minP,1),ns=k.minN?Math.min(a.n/k.minN,1):1,cs=k.minC?Math.min(a.c/k.minC,1):1,is=k.minI?Math.min(a.i/k.minI,1):1,ts=k.minT?Math.min(a.tm/k.minT,1):1;
+  const dupPenalty=a.dup?Math.max(.65,1-a.dup*.15):1;
+  const pastUse=Math.max(0,(.65*ps+.20*ns+.15*is)-Math.min(.25,a.badNeg*.12));
+  const completion=(.60*ss+.20*ts+.20*Math.min(a.w/(k.minS*5),1))*dupPenalty;
+  const cohesion=(.45*ss+.40*cs+.15*Math.min(a.complete,1))*dupPenalty;
+  const unique=new Set(toks(text).filter(w=>w.length>2)).size;
+  const vocab=Math.min(unique/Math.max(12,k.minS*2.2),1);
+  const comp=Math.min(a.complete,1);
+  return {a,pastUse,completion,coh:cohesion,vocab,comp};
+}
+function flags(text,i){
+  const f=[],arr=sents(text),avg=arr.length?wc(text)/arr.length:0,l=text.toLowerCase(),adv=ADV.filter(x=>l.includes(x)),a=analyze(text,TASKS[i]);
+  if(adv.length>=2)f.push('Unusually advanced vocabulary for expected A1 level');if(avg>18&&arr.length>=4)f.push('Very long average sentence length');if((state.events[i]?.large||0)>=2)f.push('Several large text insertions were detected');if(a.dup)f.push('Repeated identical sentence(s)');if(a.badNeg)f.push("Incorrect negative pattern after didn't");
+  if(i>0){const p=sents(state.answers[i-1]||''),pa=p.length?wc(state.answers[i-1])/p.length:0;if(pa>0&&avg>pa*1.8&&avg-pa>6)f.push('Large complexity change from previous task');}
+  return f;
+}
+function calc(){let z={pastUse:0,completion:0,coh:0,vocab:0,comp:0},details=[];TASKS.forEach((k,i)=>{const s=taskScore(state.answers[i]||'',k);Object.keys(z).forEach(x=>z[x]+=s[x]);details.push({task:i+1,title:k.title,analysis:s.a,flags:flags(state.answers[i]||'',i),input:state.events[i]});});Object.keys(z).forEach(x=>z[x]/=TASKS.length);const p={past:2*z.pastUse,completion:1*z.completion,cohesion:1*z.coh,vocab:.5*z.vocab,compreh:.5*z.comp};let g=p.past+p.completion+p.cohesion+p.vocab+p.compreh;return {grade:+Math.max(0,Math.min(5,g)).toFixed(1),points:p,details};}
+function showResult(){started=false;if(securityWatch){clearInterval(securityWatch);securityWatch=null;}document.getElementById('start').style.display='none';document.getElementById('app').style.display='none';document.getElementById('result').style.display='block';const r=calc();state.result=r;save();document.getElementById('resultName').textContent=state.student;document.getElementById('grade').textContent=r.grade.toFixed(1);const rows=[['Past Simple use',r.points.past,2],['Task completion',r.points.completion,1],['Coherence & cohesion',r.points.cohesion,1],['Basic vocabulary',r.points.vocab,.5],['Comprehensibility',r.points.compreh,.5]];document.getElementById('rubric').innerHTML=rows.map(x=>`<div class="rubricRow"><span>${x[0]}</span><b>${x[1].toFixed(2)} / ${x[2].toFixed(1)}</b></div>`).join('');document.getElementById('feedback').innerHTML='<b>Feedback:</b> '+(r.grade>=4.5?'Very good control of Past Simple for this level.':r.grade>=4?'Good work. Your past ideas are clear.':r.grade>=3?'You reached the basic goal. Review verb forms and cohesion.':'You need more practice with Past Simple and complete sentences.');}
+async function teacherReport(){const p=prompt('Teacher PIN');if(!(await checkPin(p||''))){alert('Incorrect PIN.');return;}const r=state.result||calc();document.getElementById('teacherItems').innerHTML=r.details.map(d=>`<div class="teacherItem"><b>Task ${d.task}: ${escapeHtml(d.title)}</b><div>Sentences: ${d.analysis.s} · Past verbs: ${d.analysis.p} · Negatives: ${d.analysis.n} · Connectors: ${d.analysis.c} · Irregulars: ${d.analysis.i} · Time expressions: ${d.analysis.tm}</div>${d.flags.length?`<div class="flag">Review: ${escapeHtml(d.flags.join('; '))}</div>`:'<div class="ok">No unusual writing-level signal</div>'}<div class="answerReview">${escapeHtml(state.answers[d.task-1]||'')}</div></div>`).join('')+`<div class="teacherItem"><b>Security events</b><div>${state.security.length?state.security.map(x=>`${escapeHtml(x.type)} · task ${x.task||'-'} · ${escapeHtml(x.time||'')}`).join('<br>'):'None'}</div></div><div class="teacherItem"><b>Important</b><div>Writing-level flags are heuristic signals only. They do not prove AI use and never reduce the grade automatically.</div></div>`;document.getElementById('teacherPanel').style.display='block';}
+function exportReport(){const payload={version:VERSION,student:state.student,answers:state.answers,result:state.result||calc(),security:state.security,events:state.events,exportedAt:new Date().toISOString()},blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(state.student||'student').replace(/[^a-z0-9]+/gi,'_')+'_past_simple_report.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500);}
+
+window.addEventListener('pagehide',()=>{if(started&&!state.finished){storeCurrent(false);save();}});
+window.addEventListener('beforeunload',()=>{if(started&&!state.finished){storeCurrent(false);save();}});
+load();initStart();
+</script>
+</body>
+</html>
